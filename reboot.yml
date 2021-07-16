@@ -1,0 +1,8 @@
+# Reboot Yml
+---
+- name: Playybook para rebootar maquinas
+  hosts: windows
+  tasks: 
+   - name: Reboot the machine with all defaults
+     win_reboot:
+

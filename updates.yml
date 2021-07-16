@@ -1,0 +1,14 @@
+---
+- name: Install all security updates with automatic reboots
+  hosts: windows
+  tasks:
+   - name: Rodando comandos no Windows
+     win_command: whoami.exe 
+   
+   - name: Instalando Atualizações criticas e de segurança do Ambiente Windows
+     win_updates:
+      category_names:
+      - CriticalUpdates
+      - SecurityUpdates
+      state: installed
+     register: updates_result
